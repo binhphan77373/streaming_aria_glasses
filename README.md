@@ -26,6 +26,10 @@ Once the connection is established, run the following command to start the strea
 ```bash
 aria streaming start --interface usb --use-ephemeral-certs --profile profile10
 ```
+Or:
+```bash
+aria streaming start --interface wifi --device-ip 192.168.1.136 --use-ephemeral-certs --profile profile22
+```
 
 Explanation:
 - `--interface usb`: Specifies the connection interface (USB in this case).
