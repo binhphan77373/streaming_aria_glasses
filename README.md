@@ -24,7 +24,7 @@ First, establish a connection to the NUC (Network Unit Computer) using either Wi
 Once the connection is established, run the following command to start the streaming from the Project Aria glasses:
 
 ```bash
-aria streaming start --interface usb --use-ephemeral-certs --profile profile10
+aria streaming start --interface usb --use-ephemeral-certs --profile profile22
 ```
 Or:
 ```bash
