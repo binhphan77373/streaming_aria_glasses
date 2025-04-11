@@ -1,0 +1,464 @@
+Sensors Calibration JSON: {
+  "AlgorithmName": "ArianeEtExtrinsicsMirrorStationCalibration",
+  "AlgorithmVersion": "<No HG commit hash available - Buck build>",
+  "BaroCalibrations": [
+    {
+      "Label": "baro0",
+      "PressureModel": {
+        "Name": "Linear",
+        "OffsetPa": -170.63,
+        "Slope": 1.0005
+      },
+      "SerialNumber": ""
+    }
+  ],
+  "CalibrationSource": "Factory",
+  "CameraCalibrations": [
+    {
+      "Calibrated": true,
+      "Label": "camera-slam-left",
+      "Projection": {
+        "Description": "see FisheyeRadTanThinPrism.h",
+        "Name": "FisheyeRadTanThinPrism",
+        "Params": [
+          241.6050404905566,
+          321.2086715417965,
+          236.1047336494397,
+          -0.0255189297852008,
+          0.09998063705449398,
+          -0.06760799318513805,
+          0.009016426230823257,
+          0.002456266592714987,
+          -0.0005710944261991734,
+          0.0003486948449411747,
+          -0.002601677081583837,
+          -0.0004323685175759758,
+          -0.0002749891309436216,
+          0.002672893200728664,
+          -0.00007017533262344658
+        ]
+      },
+      "SerialNumber": "0072510f1b1003050700000f060b0001",
+      "T_Device_Camera": {
+        "Translation": [
+          2.081668171172169E-17,
+          0,
+          -3.469446951953614E-18
+        ],
+        "UnitQuaternion": [
+          1,
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "Calibrated": true,
+      "Label": "camera-slam-right",
+      "Projection": {
+        "Description": "see FisheyeRadTanThinPrism.h",
+        "Name": "FisheyeRadTanThinPrism",
+        "Params": [
+          241.8750800635683,
+          318.0223995835951,
+          240.5101313485668,
+          -0.02584660054909216,
+          0.09954234964948933,
+          -0.06943399789829507,
+          0.01100619427871865,
+          0.001792268266048184,
+          -0.0005031553523874376,
+          0.0003718395174918028,
+          -0.0001224981378236027,
+          -0.001323265172167386,
+          0.00009702491835188637,
+          0.001194510754680797,
+          0.0001529019188423564
+        ]
+      },
+      "SerialNumber": "0072510f1b1003050700000f040b0001",
+      "T_Device_Camera": {
+        "Translation": [
+          0.004310395147306577,
+          -0.1094386518025829,
+          -0.08372730001553341
+        ],
+        "UnitQuaternion": [
+          0.792244652091934,
+          [
+            0.6095116740495272,
+            0.00430264113732895,
+            0.02873008368099645
+          ]
+        ]
+      }
+    },
+    {
+      "Calibrated": true,
+      "Label": "camera-et-left",
+      "Projection": {
+        "Description": "fx, fy, cx, cy, kb0, kb1, kb2, kb3",
+        "Name": "KannalaBrandtK3",
+        "Params": [
+          277.75777229484794,
+          277.53512519862306,
+          159.49987023704844,
+          119.50024725262605,
+          0.0244226428578285,
+          0.1288166090248737,
+          -0.4988911224937365,
+          0.4525759193217975
+        ]
+      },
+      "SerialNumber": "4753313330595131303337303030304c",
+      "T_Device_Camera": {
+        "Translation": [
+          0.0213785476801974,
+          -0.01122206125834437,
+          -0.009625911927155112
+        ],
+        "UnitQuaternion": [
+          -0.2275224981954826,
+          [
+            0.3874383349416335,
+            0.8512568711579848,
+            -0.2710844679041196
+          ]
+        ]
+      }
+    },
+    {
+      "Calibrated": true,
+      "Label": "camera-et-right",
+      "Projection": {
+        "Description": "fx, fy, cx, cy, kb0, kb1, kb2, kb3",
+        "Name": "KannalaBrandtK3",
+        "Params": [
+          278.01663607637215,
+          277.76635101394214,
+          159.50001208187604,
+          119.5002390852506,
+          0.03441134206400739,
+          0.01468025664306755,
+          -0.07102558091462129,
+          -0.0419799554522003
+        ]
+      },
+      "SerialNumber": "47533133305951313033373030303052",
+      "T_Device_Camera": {
+        "Translation": [
+          0.02475030409715746,
+          -0.09695324470958715,
+          -0.07551920334414344
+        ],
+        "UnitQuaternion": [
+          0.7472075280393714,
+          [
+            -0.4672706645380261,
+            -0.4712775945727886,
+            -0.03516340366303868
+          ]
+        ]
+      }
+    },
+    {
+      "Calibrated": true,
+      "Label": "camera-rgb",
+      "Projection": {
+        "Description": "see FisheyeRadTanThinPrism.h",
+        "Name": "FisheyeRadTanThinPrism",
+        "Params": [
+          608.0323792557925,
+          717.3018099180105,
+          708.4475062815175,
+          0.4013428035117443,
+          -0.4620349518619012,
+          0.1093634200844031,
+          1.187707654002357,
+          -1.704048904055286,
+          0.6416122744655766,
+          0.0001185069718886773,
+          -0.0003201540260182704,
+          -0.0003199003028372694,
+          -0.0001583606249035275,
+          0.0009576459922535145,
+          -0.0007145493417927962
+        ]
+      },
+      "SerialNumber": "0450577b730512734401100000000000",
+      "T_Device_Camera": {
+        "Translation": [
+          -0.0045724450050627,
+          -0.01263784580582594,
+          -0.004946320616141336
+        ],
+        "UnitQuaternion": [
+          0.9447828891524975,
+          [
+            0.3231031761034567,
+            0.03466889692676624,
+            0.04228117243406999
+          ]
+        ]
+      }
+    }
+  ],
+  "DeviceClassInfo": {
+    "BuildVersion": "DVT-S",
+    "DeviceClass": "Ariane"
+  },
+  "FileFormat": {
+    "Tags": [],
+    "Timestamp": "2021-08-12T17:10:32Z",
+    "UnixTime": 1628788232,
+    "Version": 3
+  },
+  "ImuCalibrations": [
+    {
+      "Accelerometer": {
+        "Bias": {
+          "Name": "Constant",
+          "Offset": [
+            -0.2370281355752647,
+            -0.1321274265733086,
+            -0.2274837621218071
+          ]
+        },
+        "Model": {
+          "Name": "Linear",
+          "RectificationMatrix": [
+            [
+              0.9987833191729115,
+              0.0001320816990331278,
+              -0.001677000321448437
+            ],
+            [
+              0,
+              0.9973853269326065,
+              -0.005097310113797656
+            ],
+            [
+              0,
+              0,
+              1.000235563047663
+            ]
+          ]
+        },
+        "TimeOffsetSec_Device_Accel": 0.002736540382373078
+      },
+      "Calibrated": true,
+      "Gyroscope": {
+        "Bias": {
+          "Name": "Constant",
+          "Offset": [
+            -0.001213543789880454,
+            0.001331238232130591,
+            0.0009478525413720712
+          ]
+        },
+        "Model": {
+          "Name": "Linear",
+          "RectificationMatrix": [
+            [
+              0.9997632398130742,
+              0.003850774828227105,
+              -0.0008945997858560545
+            ],
+            [
+              -0.003978491987873295,
+              0.9958155729161576,
+              -0.003558340327131505
+            ],
+            [
+              0.002834577158226048,
+              0.002625905681392256,
+              1.0012640565737
+            ]
+          ]
+        },
+        "TimeOffsetSec_Device_Gyro": 0.004109865525425769
+      },
+      "Label": "imu-right",
+      "SerialNumber": "rift://",
+      "T_Device_Imu": {
+        "Translation": [
+          0.005291520422018903,
+          -0.1028614789835019,
+          -0.08542491128993078
+        ],
+        "UnitQuaternion": [
+          0.6079234172439337,
+          [
+            -0.7873326615377411,
+            -0.07877321901166134,
+            0.06581169203793534
+          ]
+        ]
+      }
+    },
+    {
+      "Accelerometer": {
+        "Bias": {
+          "Name": "Constant",
+          "Offset": [
+            0.1984462573830823,
+            -0.1249700059206974,
+            0.06863481878102573
+          ]
+        },
+        "Model": {
+          "Name": "Linear",
+          "RectificationMatrix": [
+            [
+              0.9904134128705842,
+              -0.0006287623309900748,
+              0.0005529470345941235
+            ],
+            [
+              0,
+              0.9912559923994005,
+              -0.01470922895437633
+            ],
+            [
+              0,
+              0,
+              0.9931474222943847
+            ]
+          ]
+        },
+        "TimeOffsetSec_Device_Accel": 0.001004714974177125
+      },
+      "Calibrated": true,
+      "Gyroscope": {
+        "Bias": {
+          "Name": "Constant",
+          "Offset": [
+            0.001365850831622269,
+            -0.0002293604405569491,
+            -0.001990684121108626
+          ]
+        },
+        "Model": {
+          "Name": "Linear",
+          "RectificationMatrix": [
+            [
+              0.9997936660037854,
+              0.001878850313143242,
+              -0.004196183478232736
+            ],
+            [
+              0.0003246565177056481,
+              1.000327520853303,
+              -0.014012339964738
+            ],
+            [
+              0.001032909385929276,
+              0.01158933361754192,
+              0.9767367291725985
+            ]
+          ]
+        },
+        "TimeOffsetSec_Device_Gyro": 0.001799376134782281
+      },
+      "Label": "imu-left",
+      "SerialNumber": "rift://",
+      "T_Device_Imu": {
+        "Translation": [
+          0.0005528139545947641,
+          -0.0005804375059541729,
+          -0.006675472118471439
+        ],
+        "UnitQuaternion": [
+          0.02561895031994962,
+          [
+            -0.711763038210211,
+            -0.7008042475338694,
+            0.04013045552645548
+          ]
+        ]
+      }
+    }
+  ],
+  "MagCalibrations": [
+    {
+      "Bias": {
+        "Name": "Constant",
+        "Offset": [
+          1.85192,
+          -0.686667,
+          -16.7141
+        ]
+      },
+      "Label": "mag0",
+      "Model": {
+        "Name": "Linear",
+        "RectificationMatrix": [
+          [
+            -0.00000100985,
+            9.01582E-9,
+            4.56693E-8
+          ],
+          [
+            1.98077E-8,
+            -0.00000100544,
+            5.94211E-8
+          ],
+          [
+            -4.6911E-8,
+            -5.4702E-8,
+            -0.00000101333
+          ]
+        ]
+      },
+      "SerialNumber": ""
+    }
+  ],
+  "MicCalibrations": [
+    {
+      "DSensitivity1KDbv": -31.93,
+      "Label": "mic0",
+      "SerialNumber": "M000"
+    },
+    {
+      "DSensitivity1KDbv": -32.38,
+      "Label": "mic1",
+      "SerialNumber": "M001"
+    },
+    {
+      "DSensitivity1KDbv": -32.08,
+      "Label": "mic2",
+      "SerialNumber": "M002"
+    },
+    {
+      "DSensitivity1KDbv": -32.65,
+      "Label": "mic3",
+      "SerialNumber": "M003"
+    },
+    {
+      "DSensitivity1KDbv": -32.67,
+      "Label": "mic4",
+      "SerialNumber": "M004"
+    },
+    {
+      "DSensitivity1KDbv": -32.52,
+      "Label": "mic5",
+      "SerialNumber": "M005"
+    },
+    {
+      "DSensitivity1KDbv": -33.36,
+      "Label": "mic6",
+      "SerialNumber": "M006"
+    }
+  ],
+  "OriginSpecification": {
+    "ChildLabel": "camera-slam-left",
+    "Type": "Custom"
+  },
+  "Serial": "1WM093701L1325"
+}
+Sensors Calibration Object: <_core_pybinds.calibration.DeviceCalibration object at 0x76c3e17f24b0>
+RGB Calibration: CameraCalibration(label: camera-rgb, model name: Fisheye624, principal point: [717.302, 708.448], focal length: [608.032, 608.032], projection params: [608.032, 717.302, 708.448, 0.401343, -0.462035, 0.109363, 1.18771, -1.70405, 0.641612, 0.000118507, -0.000320154, -0.0003199, -0.000158361, 0.000957646, -0.000714549], image size (w,h): [2880, 2880], T_Device_Camera:(translation:[-0.00457245, -0.0126378, -0.00494632], quaternion(x,y,z,w):[0.323103, 0.0346689, 0.0422812, 0.944783]), serialNumber:0450577b730512734401100000000000)
+Destination Calibration: CameraCalibration(label: camera-rgb, model name: Linear, principal point: [255.5, 255.5], focal length: [150, 150], projection params: [150, 150, 255.5, 255.5], image size (w,h): [512, 512], T_Device_Camera:(translation:[0, 0, 0], quaternion(x,y,z,w):[0, 0, 0, 1]), serialNumber:LinearCameraCalibration)

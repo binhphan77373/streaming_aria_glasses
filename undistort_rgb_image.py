@@ -94,10 +94,14 @@ def main():
 
     # 5. Get sensors calibration
     sensors_calib_json = streaming_manager.sensors_calibration()
+    print("Sensors Calibration JSON:", sensors_calib_json)
     sensors_calib = device_calibration_from_json_string(sensors_calib_json)
+    print("Sensors Calibration Object:", sensors_calib) 
     rgb_calib = sensors_calib.get_camera_calib("camera-rgb")
+    print("RGB Calibration:", rgb_calib) 
 
     dst_calib = get_linear_camera_calibration(512, 512, 150, "camera-rgb")
+    print("Destination Calibration:", dst_calib)
 
     # 6. Start streaming
     streaming_manager.start_streaming()
@@ -143,6 +147,7 @@ def main():
                 undistorted_rgb_image = distort_by_calibration(
                     rgb_image, dst_calib, rgb_calib
                 )
+                print("Undistorted RGB Image Shape:", undistorted_rgb_image.shape)
                 # Show the undistorted image
                 cv2.imshow(undistorted_window, np.rot90(undistorted_rgb_image, -1))
 

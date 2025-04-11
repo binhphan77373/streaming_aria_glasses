@@ -19,7 +19,7 @@ from projectaria_tools.core.calibration import (
 
 import rclpy
 from rclpy.node import Node
-from sensor_msgs.msg import Image
+from sensor_msgs.msg import Image, CameraInfo
 from cv_bridge import CvBridge
 
 
@@ -38,6 +38,7 @@ class AriaStreamPublisher(Node):
     def __init__(self):
         super().__init__('aria_stream_publisher')
         self.image_pub_rgb = self.create_publisher(Image, '/aria/rgb_image', 10)
+        self.camera_info_pub = self.create_publisher(CameraInfo, '/aria/camera_info', 10)
         self.timer = self.create_timer(1/30, self.publish_image)
         self.bridge = CvBridge()
         self.images = {}
@@ -54,11 +55,52 @@ class AriaStreamPublisher(Node):
 
     def set_camera_calibration(self, calibration_data):
         self.calibration = calibration_data.get_camera_calib("camera-rgb")
-        #print("Camera Calibration Object:", self.calibration)
+        print("Camera Calibration Object:", self.calibration)
         self.distortion_calibration = get_linear_camera_calibration(
             640, 640, 278, "camera-rgb"
         )
-        #print("Destination Calibration:", self.distortion_calibration)
+        print("Destination Calibration:", self.distortion_calibration)
+        
+        # Create and publish camera info message
+        camera_info = CameraInfo()
+        camera_info.header.frame_id = "camera-rgb"
+        
+        # Get the actual projection parameters
+        focal_lengths = self.calibration.get_focal_lengths()
+        principal_point = self.calibration.get_principal_point()
+        
+        # Convert values to float explicitly
+        fx = float(focal_lengths[0])
+        fy = float(focal_lengths[1])
+        cx = float(principal_point[0])
+        cy = float(principal_point[1])
+        
+        # Set camera matrix
+        camera_info.k = [
+            fx, 0.0, cx,
+            0.0, fy, cy,
+            0.0, 0.0, 1.0
+        ]
+        
+        # Set distortion parameters - using empty list for now since we can't get them
+        camera_info.d = []
+        
+        # Set rectification matrix (identity matrix)
+        camera_info.r = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+        
+        # Set projection matrix
+        camera_info.p = [
+            fx, 0.0, cx, 0.0,
+            0.0, fy, cy, 0.0,
+            0.0, 0.0, 1.0, 0.0
+        ]
+        
+        # Set image dimensions
+        image_size = self.calibration.get_image_size()
+        camera_info.width = int(image_size[0])
+        camera_info.height = int(image_size[1])
+        
+        self.camera_info = camera_info
 
     def publish_image(self):
         if aria.CameraId.Rgb in self.images and aria.CameraId.Rgb in self.records:
@@ -86,6 +128,10 @@ class AriaStreamPublisher(Node):
             header.stamp = timestamp
             ros_rgb_image.header = header
             self.image_pub_rgb.publish(ros_rgb_image)
+            
+            # Publish camera info with the same timestamp
+            self.camera_info.header.stamp = timestamp
+            self.camera_info_pub.publish(self.camera_info)
 
 
 def main():
@@ -121,7 +167,7 @@ def main():
     device = device_client.connect()
     sensors_calib_json = device.streaming_manager.sensors_calibration()
     sensors_calib = device_calibration_from_json_string(sensors_calib_json)
-    #print("Sensors Calibration Object:", sensors_calib) 
+    print("Sensors Calibration Object:", sensors_calib) 
     observer_node.set_camera_calibration(sensors_calib)
 
     # Start streaming
